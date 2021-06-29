@@ -1,0 +1,183 @@
+/* ------------------ General styling ------------------ */
+
+*{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body{
+    overflow-x: hidden;
+    background-color: #262626;
+}
+button, input{
+    overflow-x: hidden;
+}
+
+
+/* --------------------- Header ----------------------- */
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 4rem;
+    margin: 7.5rem 0 0rem;
+}
+
+/* search bar */
+
+.search-cont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3.75rem;
+}
+.search-bar{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 20%;
+    border: 1px solid transparent;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: .4rem .75rem;
+}
+
+.icon-sm{
+    position: relative;
+    width: 32px;
+    top: 1px;
+    margin: 0rem .5rem 0rem .4rem;
+}
+
+.input{
+    outline: none;
+    border-color: transparent;
+}
+
+.input::placeholder{
+    color: #262626;
+    font-size: .9rem;
+}
+
+.input:focus{
+    outline: none;
+}
+
+/* --------------------- Gallery ----------------------- */
+
+main{
+    margin: 0rem 18vw;
+    border-radius: .5rem;
+    backdrop-filter: invert(10%) blur(5px);
+    background-color:rgba(255, 255, 255, 0.15);
+    -webkit-box-shadow: 0px 1px 15px 5px rgba(0,0,0,0.15); 
+    box-shadow: -10px 10px 80px 10px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-bg{
+    max-width: 1200px;
+    margin: auto;
+    justify-content: center;
+    border-radius: .5rem;
+    display: grid;
+    padding: 4rem;
+    grid-template-columns: repeat(auto-fill, 200px);
+    grid-template-rows:repeat(3, 200px);
+    column-gap: 40px;
+    row-gap: 40px;
+}
+
+.hide-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thumbnails{
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    transition: .15s ease-in;
+}
+
+.thumbnails:hover{
+    transform: scale(1.05);
+    -webkit-box-shadow: 0px 1px 15px 5px rgba(0,0,0,0.15); 
+    box-shadow: -10px 10px 20px 5px rgba(0, 0, 0, 0.15);
+    transition: .22s ease-out;
+}
+
+/* --------------- Ellipses Background ---------------- */
+.ellipses{
+    overflow-x: hidden;
+}
+.ellipse-big, .ellipse-medium{
+    position: absolute;
+    z-index: -1;
+    top: 100rem;
+}
+
+.ellipse-big{
+    width: 50%;
+    top: -5rem;
+    left: -32rem;
+}
+
+.ellipse-medium{
+    width: 50%;
+    top: 35rem;
+    right: -32rem;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .title{
+        font-size: 2.5rem;
+        margin-top: 4rem;
+    }
+
+    .gallery-bg{
+        max-width: 100vw;
+    }
+
+    .ellipse-medium{
+        visibility: hidden;
+        top: 0;
+        right: 0;
+    }
+    
+    .ellipse-big{
+        visibility: hidden;
+        top: 0;
+        right: 0;
+    }
+    .search-bar{
+        width: 80%;
+    }
+
+    main{
+        margin: 0 8vw 4rem;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .ellipse-medium{
+        visibility: hidden;
+        top: 0;
+        right: 0;
+    }
+    
+    .ellipse-big{
+        visibility: hidden;
+        top: 0;
+        right: 0;
+    }
+    main{
+        margin: 0 10vw 4rem;
+    }
+}
